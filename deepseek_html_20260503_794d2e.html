@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>佛說阿彌陀經 · 淨土莊嚴</title>
+  <!-- 引入 Google Fonts 與 Font Awesome 圖標庫 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Inter:opsz@14..32&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #1a1a1a;
+      font-family: 'Noto Serif TC', 'Times New Roman', serif;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+      background-image: radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 70%, rgba(139, 69, 19, 0.06) 0%, transparent 50%);
+    }
+
+    .container {
+      max-width: 820px;
+      width: 100%;
+      background: rgba(28, 28, 28, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(212, 175, 55, 0.15);
+      border-radius: 2.5rem;
+      padding: 2.2rem 2rem;
+      color: #f7f3e8;
+      transition: all 0.2s ease;
+    }
+
+    /* 裝飾性蓮花圖案（CSS繪製簡約意象） */
+    .decor-lotus {
+      display: flex;
+      justify-content: center;
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
+      opacity: 0.7;
+      font-size: 1.8rem;
+      color: #d4af37;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: 6px;
+      color: #ecd48c;
+      text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+      margin-bottom: 0.4rem;
+      line-height: 1.4;
+    }
+
+    .sub-sanskrit {
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      color: #b99e6b;
+      margin-bottom: 2.2rem;
+      font-style: italic;
+      border-bottom: 1px dashed rgba(212, 175, 55, 0.4);
+      padding-bottom: 1.2rem;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 比例 */
+      margin: 1.8rem 0 1.6rem;
+      border-radius: 1.8rem;
+      overflow: hidden;
+      box-shadow: 0 20px 35px rgba(0,0,0,0.7), 0 0 0 2px rgba(212, 175, 55, 0.3);
+      background: #000;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .info-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(20, 20, 20, 0.7);
+      border-radius: 2rem;
+      padding: 0.8rem 2rem;
+      margin: 1.8rem 0 1.2rem;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      backdrop-filter: blur(10px);
+      color: #ccb68d;
+      font-size: 0.95rem;
+    }
+
+    .channel-info {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .channel-info i {
+      font-size: 2rem;
+      color: #d4af37;
+    }
+
+    .views-duration {
+      display: flex;
+      gap: 2rem;
+      color: #b7a06e;
+    }
+
+    .views-duration span {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .description-box {
+      background: rgba(10, 10, 10, 0.6);
+      border-left: 5px solid #d4af37;
+      padding: 1.4rem 1.8rem;
+      border-radius: 1rem;
+      margin: 1.8rem 0;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #dbd3c0;
+      box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
+    }
+
+    .description-box p {
+      margin-bottom: 0.8rem;
+    }
+
+    .scripture-highlight {
+      font-weight: 600;
+      color: #e0c879;
+      font-size: 1.15rem;
+      margin: 1.2rem 0 0.5rem;
+    }
+
+    .three-sutras {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin: 1.5rem 0 1rem;
+      justify-content: center;
+    }
+
+    .badge {
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid #d4af37;
+      color: #e6d7a3;
+      padding: 0.5rem 1.4rem;
+      border-radius: 2rem;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      backdrop-filter: blur(4px);
+    }
+
+    .action-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin: 2rem 0 1rem;
+    }
+
+    .btn {
+      background: transparent;
+      border: 1px solid #d4af37;
+      color: #d4af37;
+      padding: 0.7rem 2rem;
+      border-radius: 3rem;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      backdrop-filter: blur(5px);
+      background-color: rgba(212, 175, 55, 0.05);
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background: #d4af37;
+      color: #1a1a1a;
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+      border-color: #d4af37;
+    }
+
+    .btn i {
+      font-size: 1.1rem;
+    }
+
+    .footer-note {
+      text-align: center;
+      margin-top: 2.2rem;
+      font-size: 0.8rem;
+      color: #7a7056;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer-note a {
+      color: #b89f5e;
+      text-decoration: none;
+    }
+
+    @media (max-width: 550px) {
+      .container {
+        padding: 1.8rem 1.2rem;
+      }
+      h1 {
+        font-size: 2rem;
+        letter-spacing: 3px;
+      }
+      .info-grid {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- 蓮花裝飾 -->
+    <div class="decor-lotus">
+      <span>☸</span> <span>𑁍</span> <span>☸</span>
+    </div>
+
+    <!-- 標題區 -->
+    <h1>佛說阿彌陀經</h1>
+    <div class="sub-sanskrit">
+      Sukhāvatī-vyūha · Amitābha Sūtra · 淨土三經之一
+    </div>
+
+    <!-- 影片嵌入區塊 (使用 YouTube 嵌入連結) -->
+    <div class="video-wrapper">
+      <iframe 
+        src="https://www.youtube.com/embed/S2p0JegpM5I?rel=0&modestbranding=1&color=white"
+        title="佛說阿彌陀經 影片播放器"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- 頻道與影片資訊 -->
+    <div class="info-grid">
+      <div class="channel-info">
+        <i class="fas fa-user-circle"></i>
+        <div>
+          <strong style="color:#ecd48c;">Chen Foong</strong>
+          <br><span style="font-size:0.8rem;">@foongsoon · 2012年1月12日</span>
+        </div>
+      </div>
+      <div class="views-duration">
+        <span><i class="far fa-eye"></i> 1,855 次觀看</span>
+        <span><i class="far fa-clock"></i> 全長經文</span>
+      </div>
+    </div>
+
+    <!-- 經文描述與核心要義 -->
+    <div class="description-box">
+      <p style="margin-top:0;">
+        <span class="scripture-highlight">📿 西方極樂世界莊嚴</span><br>
+        此經爲姚秦·鳩摩羅什譯，敘説阿彌陀佛淨土功德莊嚴，勸導眾生執持名號，一心不亂，即可往生極樂國土。
+      </p>
+      <p>
+        <span class="scripture-highlight">🌟 無問自説之經</span><br>
+        釋迦牟尼佛在舍衛國祇樹給孤獨園，無問自説，稱讚不可思議功德，描繪七寶池、八功德水、天雨寶花之殊勝境界。
+      </p>
+      <p style="margin-bottom:0;">
+        <span class="scripture-highlight">🪷 持名念佛 · 一心不亂</span><br>
+        若有善男子善女人，聞説阿彌陀佛，執持名號，若一日至七日，一心不亂，其人臨命終時，阿彌陀佛與諸聖眾現在其前。
+      </p>
+    </div>
+
+    <!-- 淨土三經標籤 -->
+    <div style="text-align: center; margin: 0.5rem 0 0.2rem; color: #b59b5c; font-size: 0.9rem;">
+      此經位列「淨土三經」
+    </div>
+    <div class="three-sutras">
+      <span class="badge">佛說阿彌陀經</span>
+      <span class="badge">佛說無量壽經</span>
+      <span class="badge">佛說觀無量壽佛經</span>
+    </div>
+
+    <!-- 行動按鈕 -->
+    <div class="action-buttons">
+      <a href="https://www.youtube.com/watch?v=S2p0JegpM5I" target="_blank" rel="noopener" class="btn">
+        <i class="fab fa-youtube"></i> 在 YouTube 觀看
+      </a>
+      <a href="https://www.youtube.com/@foongsoon" target="_blank" rel="noopener" class="btn">
+        <i class="fas fa-play-circle"></i> 更多佛法影片
+      </a>
+      <button class="btn" id="scrollToTopBtn">
+        <i class="fas fa-arrow-up"></i> 回頂部
+      </button>
+    </div>
+
+    <!-- 底部資訊 -->
+    <div class="footer-note">
+      <span>🕉️ 阿彌陀佛 · 功德莊嚴</span>
+      <span>
+        <a href="https://www.youtube.com/embed/S2p0JegpM5I" target="_blank">嵌入影片</a> · 
+        <span>© 2025 淨土莊嚴</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- 簡易回頂部互動 -->
+  <script>
+    (function() {
+      const btn = document.getElementById('scrollToTopBtn');
+      if (btn) {
+        btn.addEventListener('click', function(e) {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
